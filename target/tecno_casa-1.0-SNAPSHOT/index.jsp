@@ -12,7 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        as
         <%response.sendRedirect("views/paginaInicio.jsp");%>
     </body>
 </html>
