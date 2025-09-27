@@ -1,0 +1,6 @@
+Controllers\authUser.class
+Modelo\Usuario.class
+Servicios\Encriptamiento.class
+com\mycompany\tecno_casa\JakartaRestConfiguration.class
+com\mycompany\tecno_casa\resources\JakartaEE8Resource.class
+Servicios\Conexion.class
