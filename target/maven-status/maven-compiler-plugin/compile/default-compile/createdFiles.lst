@@ -1,6 +1,16 @@
+Modelo\dao\ReclamoDAO.class
 Controllers\authUser.class
+Modelo\dao\ProductoDAO.class
 Modelo\Usuario.class
+com\mycompany\tecno_casa\resources\JakartaEE8Resource.class
+Modelo\dto\Categoria.class
+Modelo\dto\Marca.class
+Modelo\dto\Reclamo.class
+Controllers\ControladorReclamo.class
 Servicios\Encriptamiento.class
 com\mycompany\tecno_casa\JakartaRestConfiguration.class
-com\mycompany\tecno_casa\resources\JakartaEE8Resource.class
+Modelo\dao\CategoriaDAO.class
+Modelo\dto\Producto.class
 Servicios\Conexion.class
+Controllers\ControladorPrincipal.class
+Modelo\dao\MarcaDAO.class

@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="paginaInicio.jsp">Tecno Casa</a>     
+        <a class="navbar-brand fw-bold" href="${pageContext.request.contextPath}/index.jsp">Tecno Casa</a>     
         <form class="d-flex mx-auto" style="width: 50%;">
             <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Buscar">
             <button class="btn btn-outline-dark" style="background: #ffc267" type="button">

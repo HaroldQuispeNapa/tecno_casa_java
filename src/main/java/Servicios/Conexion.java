@@ -50,7 +50,7 @@ public class Conexion {
     public static void main(String[] args){
         Connection cx = Conexion.getConection();
         try{
-            System.out.println("EXISTOSO BRO"+ cx.getCatalog());
+            System.out.println("EXISTOSO BRO "+ cx.getCatalog());
         }
         catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, "Error en la conexión", ex);

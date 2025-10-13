@@ -12,6 +12,12 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%--
         <%response.sendRedirect("views/paginaInicio.jsp");%>
+        --%>
+
+        <%
+            response.sendRedirect("ControladorPrincipal?accion=paginaInicio");
+        %>
     </body>
 </html>
