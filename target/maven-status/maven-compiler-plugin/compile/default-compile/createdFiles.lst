@@ -3,6 +3,7 @@ Controllers\authUser.class
 Modelo\dao\ProductoDAO.class
 Modelo\Usuario.class
 com\mycompany\tecno_casa\resources\JakartaEE8Resource.class
+Controllers\ControladorProductos.class
 Modelo\dto\Categoria.class
 Modelo\dto\Marca.class
 Modelo\dto\Reclamo.class

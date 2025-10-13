@@ -45,3 +45,16 @@ export function Preguntar(callback,mensaje, icon) {
         }
   });
 }
+export async function Confirmar(titulo, mensaje, icon = "warning") {
+  const result = await Swal.fire({
+    title: titulo,
+    text: mensaje,
+    icon: icon,
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "Cancelar",
+    confirmButtonText: "Aceptar"
+  });
+  return result.isConfirmed;
+}

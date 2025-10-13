@@ -22,14 +22,14 @@ public class Conexion {
         
         Connection cnx = null;
         
-        String DB_NAME = dotenv.get("DB_NAME") != null ? dotenv.get("DB_NAME") : "tecno_casa";
+         String DB_NAME = dotenv.get("DB_NAME") != null ? dotenv.get("DB_NAME") : "tecno_casa";
         String DB_USER = dotenv.get("DB_USER") != null ? dotenv.get("DB_USER") : "root";
         String DB_PASSWORD = dotenv.get("DB_PASSWORD") != null ? dotenv.get("DB_PASSWORD") : "";
         
     
         String url = "jdbc:mysql://localhost:3306/"+ DB_NAME +"?useTimeZone=true&"
                 + "serverTimezone=UTC&autoReconnect=true";
-
+     
         String user = DB_USER;
         String clave = DB_PASSWORD;
         String Driver = "com.mysql.cj.jdbc.Driver";

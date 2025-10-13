@@ -34,7 +34,7 @@
                 <ul class="list-group list-group-flush">
                     <a href="${pageContext.request.contextPath}/views/clientes.jsp" class="list-group-item bg-primary text-white border-0" style="cursor:pointer;">Clientes</a>
                     <a href="${pageContext.request.contextPath}/views/usuarios.jsp" class="list-group-item bg-primary text-white border-0" style="cursor:pointer;">Usuarios</a>
-                    <a href="${pageContext.request.contextPath}/views/productos.jsp" class="list-group-item bg-primary text-white border-0" style="cursor:pointer;">Productos</a>
+                    <a href="${pageContext.request.contextPath}/ControladorProductos?accion=listar" class="list-group-item bg-primary text-white border-0" style="cursor:pointer;">Productos</a>
                     <a href="${pageContext.request.contextPath}/ControladorReclamo?accionAdmin=reclamo" class="list-group-item bg-primary text-white border-0"> Reclamos</a>
 
                 </ul>
