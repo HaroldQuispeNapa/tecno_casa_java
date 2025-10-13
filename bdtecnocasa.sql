@@ -5,14 +5,39 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 nombre_rol VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE Usuario (
+INSERT INTO Roles (nombre_rol)values("Cliente"),("Administrador");
+select * from Roles;
+
+CREATE TABLE Usuarios (
 id INT AUTO_INCREMENT PRIMARY KEY,
-nombre_usuario VARCHAR(100) NOT NULL,
-email VARCHAR(100) UNIQUE NOT NULL,
+dni CHAR(8) NOT NULL UNIQUE,
 clave VARCHAR(255) NOT NULL,
+nombres VARCHAR(255) NOT NULL,
+apellidos VARCHAR(255) NOT NULL,
+fecha_nacimiento VARCHAR(50) NOT NULL,
 id_rol INT NOT NULL,
 FOREIGN KEY (id_rol) REFERENCES Roles(id)
 );
+
+INSERT INTO Usuarios (dni, clave, nombres, apellidos, fecha_nacimiento, id_rol) VALUES
+('12345678', 'admin123', 'Carlos', 'Ramírez', '15-12-2004', 2), -- Administrador
+('87654321', 'admin456', 'María', 'Gonzales', '15-12-2004', 2), -- Administrador
+('11223344', 'cliente123', 'Juan', 'Pérez', '15-12-2004', 1), -- Cliente
+('44332211', 'cliente456', 'Ana', 'Torres', '15-12-2004', 1); -- Cliente
+
+
+SELECT 
+    u.id,
+    u.dni,
+    u.clave,
+    u.nombres,
+    u.apellidos,
+    u.fecha_nacimiento,
+    r.nombre_rol
+FROM Usuarios u
+INNER JOIN Roles r
+    ON u.id_rol = r.id;
+
 
 CREATE TABLE Categoria (
     idCategoria INT AUTO_INCREMENT PRIMARY KEY,
