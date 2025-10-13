@@ -1,3 +1,5 @@
+USE tecno_casa;
+
 CREATE TABLE Roles (
 id INT AUTO_INCREMENT PRIMARY KEY,
 nombre_rol VARCHAR(50) NOT NULL
