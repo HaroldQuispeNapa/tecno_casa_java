@@ -24,7 +24,7 @@ public class Conexion {
         
         String DB_NAME = dotenv.get("DB_NAME") != null ? dotenv.get("DB_NAME") : "tecno_casa";
         String DB_USER = dotenv.get("DB_USER") != null ? dotenv.get("DB_USER") : "root";
-        String DB_PASSWORD = dotenv.get("DB_PASSWORD") != null ? dotenv.get("DB_PASSWORD") : "admin";
+        String DB_PASSWORD = dotenv.get("DB_PASSWORD") != null ? dotenv.get("DB_PASSWORD") : "";
         
     
         String url = "jdbc:mysql://localhost:3306/"+ DB_NAME +"?useTimeZone=true&"

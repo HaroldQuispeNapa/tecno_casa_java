@@ -18,37 +18,37 @@
 
                     <div class="mb-3">
                         <label>Nombre*</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre_reclamo_editar" required>
+                        <input type="text" class="form-control" name="nombre" id="nombre_reclamo_editar" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Apellido*</label>
-                        <input type="text" class="form-control" name="apellido" id="apellido_reclamo_editar" required>
+                        <input type="text" class="form-control" name="apellido" id="apellido_reclamo_editar" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Dirección*</label>
-                        <input type="text" class="form-control" name="direccion" id="direccion_reclamo_editar" required>
+                        <input type="text" class="form-control" name="direccion" id="direccion_reclamo_editar" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>DNI*</label>
-                        <input type="text" class="form-control" name="dni" id="dni_reclamo_editar" maxlength="8" required>
+                        <input type="text" class="form-control" name="dni" id="dni_reclamo_editar" maxlength="8" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Teléfono</label>
-                        <input type="text" class="form-control" name="telefono" id="telefono_reclamo_editar" maxlength="9">
+                        <input type="text" class="form-control" name="telefono" id="telefono_reclamo_editar" maxlength="9" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" id="email_reclamo_editar">
+                        <input type="email" class="form-control" name="email" id="email_reclamo_editar" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Tipo de Bien*</label>
-                        <select class="form-select" name="tipo_bien" id="tipo_bien_reclamo_editar" required>
+                        <select class="form-select" name="tipo_bien" id="tipo_bien_reclamo_editar" disabled>
                             <option value="">--Seleccione--</option>
                             <option value="Producto">Producto</option>
                             <option value="Servicio">Servicio</option>
@@ -57,17 +57,17 @@
 
                     <div class="mb-3">
                         <label>Monto</label>
-                        <input type="number" class="form-control" name="monto" id="monto_reclamo_editar" step="0.01">
+                        <input type="number" class="form-control" name="monto" id="monto_reclamo_editar" step="0.01" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Descripción*</label>
-                        <input type="text" class="form-control" name="descripcion" id="descripcion_reclamo_editar" required>
+                        <input type="text" class="form-control" name="descripcion" id="descripcion_reclamo_editar" readonly>
                     </div>
 
                     <div class="mb-3">
                         <label>Tipo de Reclamo*</label>
-                        <select class="form-select" name="tipo_reclamo" id="tipo_reclamo_editar" required>
+                        <select class="form-select" name="tipo_reclamo" id="tipo_reclamo_editar" disabled>
                             <option value="">--Seleccione--</option>
                             <option value="Reclamo">Reclamo</option>
                             <option value="Queja">Queja</option>
@@ -76,12 +76,12 @@
 
                     <div class="mb-3">
                         <label>Detalle*</label>
-                        <textarea class="form-control" name="detalle" id="detalle_reclamo_editar" rows="3" required></textarea>
+                        <textarea class="form-control" name="detalle" id="detalle_reclamo_editar" rows="3" readonly></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label>Pedido*</label>
-                        <textarea class="form-control" name="pedido" id="pedido_reclamo_editar" rows="3" required></textarea>
+                        <textarea class="form-control" name="pedido" id="pedido_reclamo_editar" rows="3" readonly></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -104,7 +104,6 @@
                             </div>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

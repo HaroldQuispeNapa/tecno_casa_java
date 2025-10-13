@@ -1,3 +1,5 @@
+USE tecno_casa;
+
 CREATE TABLE Roles (
 id INT AUTO_INCREMENT PRIMARY KEY,
 nombre_rol VARCHAR(50) NOT NULL
@@ -95,7 +97,8 @@ CREATE TABLE Reclamo (
     descripcion VARCHAR(200) NOT NULL,
     tipo_reclamo ENUM('Reclamo', 'Queja') NOT NULL,
     detalle TEXT NOT NULL,
-    pedido TEXT NOT NULL
+    pedido TEXT NOT NULL,
+    estado ENUM('Pendiente', 'Proceso', 'Resuelto') NOT NULL DEFAULT 'Pendiente'
 );
 
 select * from reclamo;

@@ -21,26 +21,23 @@ public class ControladorReclamo extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ControladorReclamo</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ControladorReclamo at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        String accionAdmin = request.getParameter("accionAdmin");
+        /*
+        if ("reclamo".equals(accionAdmin)) {
+            List<Reclamo> listaRec = new ReclamoDAO().getListReclamos();
+            request.setAttribute("listaReclamos", listaRec);
+            request.getRequestDispatcher("./views/reclamos.jsp").forward(request, response);
         }
+         */
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-
+/*
         response.setContentType("application/json;charset=UTF-8");
 
         List<Reclamo> listRec = new ReclamoDAO().getListReclamos();
@@ -48,6 +45,26 @@ public class ControladorReclamo extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
             out.print(json);
+        }
+         */
+
+        String accionAdmin = request.getParameter("accionAdmin");
+
+        if ("reclamo".equals(accionAdmin)) {
+            // Lista para JSP
+            List<Reclamo> listaRec = new ReclamoDAO().getListReclamos();
+            request.setAttribute("listaReclamos", listaRec);
+
+            request.getRequestDispatcher("/views/reclamos.jsp").forward(request, response);
+        } else {
+            // Lista para JSON (AJAX)
+            response.setContentType("application/json;charset=UTF-8");
+            List<Reclamo> listRec = new ReclamoDAO().getListReclamos();
+            String json = new Gson().toJson(listRec);
+
+            try (PrintWriter out = response.getWriter()) {
+                out.print(json);
+            }
         }
 
     }
@@ -99,6 +116,7 @@ public class ControladorReclamo extends HttpServlet {
                 boolean exito = new ReclamoDAO().registrarReclamo(reclamo);
 
                 System.out.println("VALOR " + exito);
+                resultado.put("success", exito);
 
             } else if ("editar".equals(accion)) {
                 String idStr = request.getParameter("idReclamo");
