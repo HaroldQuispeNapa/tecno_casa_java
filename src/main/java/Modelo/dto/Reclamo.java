@@ -15,11 +15,12 @@ public class Reclamo {
     private String tipo_reclamo;
     private String detalle;
     private String pedido;
+    private String estado;
 
     public Reclamo() {
     }
 
-    public Reclamo(int idReclamo, String nombre, String apellido, String direccion, String DNI, String telefono, String email, String tipo_bien, double monto, String descripcion, String tipo_reclamo, String detalle, String pedido) {
+    public Reclamo(int idReclamo, String nombre, String apellido, String direccion, String DNI, String telefono, String email, String tipo_bien, double monto, String descripcion, String tipo_reclamo, String detalle, String pedido, String estado) {
         this.idReclamo = idReclamo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -33,6 +34,7 @@ public class Reclamo {
         this.tipo_reclamo = tipo_reclamo;
         this.detalle = detalle;
         this.pedido = pedido;
+        this.estado = estado;
     }
 
     public int getIdReclamo() {
@@ -139,8 +141,13 @@ public class Reclamo {
         this.pedido = pedido;
     }
 
+    public String getEstado() {
+        return estado;
+    }
 
-    
-    
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     
 }

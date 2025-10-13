@@ -102,6 +102,8 @@
 
         <!-- Footer -->
         <jsp:include page="/components/footer.jsp" flush="true" />
+        <jsp:include page="/components/modal_editar_reclamo.jsp" />
+
 
         <script type="module" src="${pageContext.request.contextPath}/js/reclamos.js"></script>
     </body>

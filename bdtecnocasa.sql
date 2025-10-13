@@ -122,7 +122,8 @@ CREATE TABLE Reclamo (
     descripcion VARCHAR(200) NOT NULL,
     tipo_reclamo ENUM('Reclamo', 'Queja') NOT NULL,
     detalle TEXT NOT NULL,
-    pedido TEXT NOT NULL
+    pedido TEXT NOT NULL,
+    estado ENUM('Pendiente', 'Proceso', 'Resuelto') NOT NULL DEFAULT 'Pendiente'
 );
 
 select * from reclamo;

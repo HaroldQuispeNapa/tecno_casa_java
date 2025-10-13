@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -20,26 +21,52 @@ public class ControladorReclamo extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ControladorReclamo</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ControladorReclamo at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        String accionAdmin = request.getParameter("accionAdmin");
+        /*
+        if ("reclamo".equals(accionAdmin)) {
+            List<Reclamo> listaRec = new ReclamoDAO().getListReclamos();
+            request.setAttribute("listaReclamos", listaRec);
+            request.getRequestDispatcher("./views/reclamos.jsp").forward(request, response);
         }
+         */
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
+/*
+        response.setContentType("application/json;charset=UTF-8");
+
+        List<Reclamo> listRec = new ReclamoDAO().getListReclamos();
+        String json = new Gson().toJson(listRec);
+
+        try (PrintWriter out = response.getWriter()) {
+            out.print(json);
+        }
+         */
+
+        String accionAdmin = request.getParameter("accionAdmin");
+
+        if ("reclamo".equals(accionAdmin)) {
+            // Lista para JSP
+            List<Reclamo> listaRec = new ReclamoDAO().getListReclamos();
+            request.setAttribute("listaReclamos", listaRec);
+
+            request.getRequestDispatcher("/views/reclamos.jsp").forward(request, response);
+        } else {
+            // Lista para JSON (AJAX)
+            response.setContentType("application/json;charset=UTF-8");
+            List<Reclamo> listRec = new ReclamoDAO().getListReclamos();
+            String json = new Gson().toJson(listRec);
+
+            try (PrintWriter out = response.getWriter()) {
+                out.print(json);
+            }
+        }
+
     }
 
     @Override
@@ -84,12 +111,38 @@ public class ControladorReclamo extends HttpServlet {
                 reclamo.setTipo_reclamo(tipo_reclamo);
                 reclamo.setDetalle(detalle);
                 reclamo.setPedido(pedido);
+                reclamo.setEstado("Pendiente");
 
                 boolean exito = new ReclamoDAO().registrarReclamo(reclamo);
-                resultado.put("success", exito);
-                
-                System.out.println("VALOR " + exito);
 
+                System.out.println("VALOR " + exito);
+                resultado.put("success", exito);
+
+            } else if ("editar".equals(accion)) {
+                String idStr = request.getParameter("idReclamo");
+                String estado = request.getParameter("estado");
+
+                int idReclamo = Integer.parseInt(idStr == null || idStr.isEmpty() ? "0" : idStr);
+
+                if (!"Pendiente".equals(estado) && !"Proceso".equals(estado) && !"Resuelto".equals(estado)) {
+                    estado = "Pendiente";
+                }
+
+                Reclamo reclamo = new Reclamo();
+                reclamo.setIdReclamo(idReclamo);
+                reclamo.setEstado(estado);
+
+                boolean exito = new ReclamoDAO().editarReclamo(reclamo);
+                resultado.put("success", exito);
+
+            } else if ("eliminar".equals(accion)) {
+                String idStr = request.getParameter("idReclamo");
+                System.out.println("Eliminar id: " + idStr);
+
+                int idReclamo = Integer.parseInt(idStr);
+
+                boolean exito = new ReclamoDAO().eliminarReclamo(idReclamo);
+                resultado.put("success", exito);
             }
 
         } catch (Exception e) {
