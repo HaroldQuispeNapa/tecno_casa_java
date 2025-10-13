@@ -8,6 +8,7 @@ Modelo\dto\Categoria.class
 Modelo\dto\Marca.class
 Modelo\dto\Reclamo.class
 Controllers\ControladorReclamo.class
+Controllers\ControladorAuth.class
 Servicios\Encriptamiento.class
 com\mycompany\tecno_casa\JakartaRestConfiguration.class
 Modelo\dao\CategoriaDAO.class
@@ -15,3 +16,4 @@ Modelo\dto\Producto.class
 Servicios\Conexion.class
 Controllers\ControladorPrincipal.class
 Modelo\dao\MarcaDAO.class
+Modelo\dao\Auth.class

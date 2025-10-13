@@ -30,8 +30,8 @@
 
                 <ul class="dropdown-menu">
                     <% if(usuario == null){ %>
-                        <li><a class="dropdown-item" href="login.jsp?page=register">Registrarte</a></li>
-                        <li><a class="dropdown-item" href="login.jsp?page=login">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item" href="<%= request.getContextPath() %>/views/login.jsp?page=register">Registrarte</a></li>
+                        <li><a class="dropdown-item" href="<%= request.getContextPath() %>/views/login.jsp?page=login">Iniciar Sesión</a></li>
                     <% } else { %>
                         <form action="<%= request.getContextPath() %>/authUser" method="post">
                             <input type="hidden" name="accion" value="cerrar">

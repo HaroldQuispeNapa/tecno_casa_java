@@ -21,9 +21,18 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
                 <span class="navbar-brand">Panel de Administrador</span>
+                <% 
+                    String usuario = (String) session.getAttribute("usuario");
+                    if(usuario != null){
+                %>
                 <div class="ms-auto text-white">
-                    👤 Juan Pérez
+                    👤 Bienvenido, <%= usuario %>
                 </div>
+                <form action="<%= request.getContextPath() %>/authUser" method="post">
+                    <input type="hidden" name="accion" value="cerrar">
+                    <button type="submit" class="dropdown-item">  - Cerrar Sesión</button>
+                </form>
+                <% } %>
             </div>
         </nav>
 

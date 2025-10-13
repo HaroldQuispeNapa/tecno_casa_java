@@ -10,6 +10,6 @@
         <h1>TEST DE PRUEBA - CLIENTE</h1>
     </div>
 </div>
-
+<script type="module" src="${pageContext.request.contextPath}/js/clientes.js"></script>
 </body>
 </html>
