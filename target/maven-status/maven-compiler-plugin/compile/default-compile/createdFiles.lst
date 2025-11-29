@@ -2,6 +2,7 @@ Modelo\dao\ReclamoDAO.class
 Modelo\dao\ProductoDAO.class
 Modelo\dto\Usuario.class
 Controllers\ControladorCliente.class
+Modelo\dao\ClienteDAO.class
 com\mycompany\tecno_casa\resources\JakartaEE8Resource.class
 Controllers\ControladorProductos.class
 Modelo\dto\Categoria.class

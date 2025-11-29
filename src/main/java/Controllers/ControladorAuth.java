@@ -35,7 +35,7 @@ public class ControladorAuth extends HttpServlet {
 
             case "cerrar":
                 request.getSession().invalidate();
-                response.sendRedirect(request.getContextPath() + "/views/paginaInicio.jsp");
+                response.sendRedirect(request.getContextPath() + "/ControladorPrincipal?accion=paginaInicio");
                 break;
 
             default:
@@ -84,7 +84,7 @@ public class ControladorAuth extends HttpServlet {
 
             // Redirección según rol
             if (usuario.getRol() == 1) { // Cliente
-                response.sendRedirect(request.getContextPath() + "/views/paginaInicio.jsp");
+                response.sendRedirect(request.getContextPath() + "/ControladorPrincipal?accion=paginaInicio");
             } else if (usuario.getRol() == 2) { // Administrador
                 response.sendRedirect(request.getContextPath() + "/ControladorProductos?accion=listar");
             }

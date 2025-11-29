@@ -16,15 +16,15 @@ import java.util.logging.Logger;
  * @author LAB-USR-LNORTE
  */
 public class Conexion {
-    private static final Dotenv dotenv = Dotenv.load();
+    //private static final Dotenv dotenv = Dotenv.load();
     
     public static Connection getConection(){
         
         Connection cnx = null;
         
-         String DB_NAME = dotenv.get("DB_NAME") != null ? dotenv.get("DB_NAME") : "tecno_casa";
-        String DB_USER = dotenv.get("DB_USER") != null ? dotenv.get("DB_USER") : "root";
-        String DB_PASSWORD = dotenv.get("DB_PASSWORD") != null ? dotenv.get("DB_PASSWORD") : "";
+        String DB_NAME = "tecno_casa";
+        String DB_USER = "root";
+        String DB_PASSWORD = "";
         
     
         String url = "jdbc:mysql://localhost:3306/"+ DB_NAME +"?useTimeZone=true&"

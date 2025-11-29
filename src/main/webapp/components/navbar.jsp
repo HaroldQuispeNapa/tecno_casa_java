@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item" href="<%= request.getContextPath() %>/views/login.jsp?page=register">Registrarte</a></li>
                         <li><a class="dropdown-item" href="<%= request.getContextPath() %>/views/login.jsp?page=login">Iniciar Sesión</a></li>
                     <% } else { %>
-                        <form action="<%= request.getContextPath() %>/authUser" method="post">
+                        <form action="<%= request.getContextPath() %>/ControladorAuth" method="post">
                             <input type="hidden" name="accion" value="cerrar">
                             <button type="submit" class="dropdown-item">Cerrar Sesión</button>
                         </form>
