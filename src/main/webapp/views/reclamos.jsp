@@ -7,11 +7,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="/components/dashboard/dashboard.jsp" flush="true" />
+
 <div class="flex-grow-1 p-4" id="main-content">
-    <h1>TEST DE PRUEBA - RECLAMOS</h1>
+    <h1>RECLAMOS</h1>
 
     <div class="table-responsive mt-4">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" id="tablaReclamos">
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
@@ -49,23 +50,20 @@
                         <td>${r.pedido}</td>
                         <td>${r.estado}</td>
                         <td class="text-center">
-                            <button data-accion="editar" class="btn btn-warning btn-sm">
+                            <button data-accion="editar" class="btn btn-warning btn-sm btn-editar">
                                 <i class="bi bi-pencil-fill"></i>
                             </button>
                         </td>
                     </tr>
                 </c:forEach>
-
             </tbody>
         </table>
-
     </div>
-</div>
-
 </div>
 
 <jsp:include page="/components/modal_editar_reclamo.jsp" />
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="module" src="${pageContext.request.contextPath}/js/reclamos.js"></script>
 
 </body>

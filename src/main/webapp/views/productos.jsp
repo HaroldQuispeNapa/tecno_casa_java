@@ -23,7 +23,7 @@
 
   
     <div class="table-responsive">
-        <table class="table table-bordered" id="tabla-productos">  
+        <table class="table table-bordered" id="tabla-productos" class="display">  
             <thead class="table-dark">
                 <tr class="fila-producto">
                     <th>Seleccionar</th>
