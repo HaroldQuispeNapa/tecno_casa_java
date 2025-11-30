@@ -10,10 +10,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Panel Empresarial</title>
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     </head>
     <body class="bg-light">
 
@@ -21,18 +30,18 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
                 <span class="navbar-brand">Panel de Administrador</span>
-                <% 
+                <%
                     String usuario = (String) session.getAttribute("usuario");
-                    if(usuario != null){
+                    if (usuario != null) {
                 %>
                 <div class="ms-auto text-white">
-                    👤 Bienvenido, <%= usuario %>
+                    👤 Bienvenido, <%= usuario%>
                 </div>
-                <form action="<%= request.getContextPath() %>/authUser" method="post">
+                <form action="<%= request.getContextPath()%>/authUser" method="post">
                     <input type="hidden" name="accion" value="cerrar">
                     <button type="submit" class="dropdown-item">  - Cerrar Sesión</button>
                 </form>
-                <% } %>
+                <% }%>
             </div>
         </nav>
 
