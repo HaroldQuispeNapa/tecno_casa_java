@@ -62,7 +62,7 @@
                 <h3 class="text-center text-light display-7">Encuentra lo que necesitas</h3>
             </div>
             <div class="container py-5">
-                <div class="row row-cols-2 row-cols-md-5 g-4">
+                <div id="contenedor-productos" class="row row-cols-2 row-cols-md-5 g-4">
 
                     <c:forEach var="p" items="${listaProductos}">
                         <div class="col">
@@ -113,6 +113,7 @@
 
         <!-- Footer -->
         <jsp:include page="/components/footer.jsp" flush="true" />
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
