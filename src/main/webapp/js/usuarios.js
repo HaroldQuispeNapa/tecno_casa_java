@@ -1,15 +1,18 @@
 $(document).ready(function() {
-  $('#clientesTable').DataTable({
+  $('#usuariosTable').DataTable({
     ajax: {
-      url: 'http://localhost:9090/api/usuarios/clientes',
-      dataSrc: '' 
+      url: 'http://localhost:9090/api/usuarios',
+      dataSrc: ''
     },
     columns: [
       { data: 'id' },
       { data: 'dni' },
       { data: 'nombres' },
       { data: 'apellidos' },
-      { data: 'fechaNacimiento' }
+      { data: 'fechaNacimiento' },
+      { data: 'idRol' } 
     ]
   });
 });
+
+
