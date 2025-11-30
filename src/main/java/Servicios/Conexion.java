@@ -24,7 +24,7 @@ public class Conexion {
         
         String DB_NAME = "tecno_casa";
         String DB_USER = "root";
-        String DB_PASSWORD = "";
+        String DB_PASSWORD = "root";
         
     
         String url = "jdbc:mysql://localhost:3306/"+ DB_NAME +"?useTimeZone=true&"

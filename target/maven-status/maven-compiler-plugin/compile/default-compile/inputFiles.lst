@@ -1,20 +1,20 @@
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Controllers\ControladorAuth.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dao\Auth.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\com\mycompany\tecno_casa\resources\JakartaEE8Resource.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Servicios\Encriptamiento.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Controllers\ControladorProductos.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dao\ProductoDAO.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dto\Marca.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dto\Categoria.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Servicios\Conexion.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dao\MarcaDAO.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dao\CategoriaDAO.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dao\ClienteDAO.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dto\Reclamo.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dto\Usuario.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dao\ReclamoDAO.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Controllers\ControladorReclamo.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\com\mycompany\tecno_casa\JakartaRestConfiguration.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Controllers\ControladorPrincipal.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Modelo\dto\Producto.java
-D:\UTP\WEB-FINAL\tecno_casa_java\src\main\java\Controllers\ControladorCliente.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\com\mycompany\tecno_casa\resources\JakartaEE8Resource.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Controllers\ControladorCliente.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dto\Marca.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dao\Auth.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Controllers\ControladorAuth.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\com\mycompany\tecno_casa\JakartaRestConfiguration.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dao\MarcaDAO.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Controllers\ControladorProductos.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Controllers\ControladorReclamo.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dao\ClienteDAO.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dto\Categoria.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dto\Usuario.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dao\ProductoDAO.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dto\Reclamo.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Servicios\Conexion.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dto\Producto.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dao\CategoriaDAO.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Modelo\dao\ReclamoDAO.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Servicios\Encriptamiento.java
+C:\Users\Alex\Desktop\Tecno casa\1\src\main\java\Controllers\ControladorPrincipal.java

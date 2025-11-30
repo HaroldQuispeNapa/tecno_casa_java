@@ -73,7 +73,7 @@
                                     <p class="card-title flex-grow-1">${p.modelo}</p>
                                     <div class="mt-auto">
                                         <p class="text-danger fw-bold mb-2">S/ ${p.precio}</p>
-                                        <a href="./views/detalle-Producto.jsp" class="btn btn-danger w-100">Añadir al carro</a>
+                                        <a href="./views/detalle-Producto.jsp?id=${p.idProducto}" class="btn btn-danger w-100">Ver Detalle</a>
                                     </div>
                                 </div>
                             </div>
