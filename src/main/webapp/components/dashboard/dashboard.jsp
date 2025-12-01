@@ -28,7 +28,7 @@
                 <div class="ms-auto text-white">
                     👤 Bienvenido, <%= usuario %>
                 </div>
-                <form action="<%= request.getContextPath() %>/authUser" method="post">
+                <form action="<%= request.getContextPath() %>/ControladorAuth" method="post">
                     <input type="hidden" name="accion" value="cerrar">
                     <button type="submit" class="dropdown-item">  - Cerrar Sesión</button>
                 </form>
