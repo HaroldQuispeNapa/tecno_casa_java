@@ -176,3 +176,21 @@ INSERT INTO Reclamo (nombre, apellido, direccion, dni, telefono, email, tipo_bie
 'Pendiente');
 
 select * from reclamo;
+
+-- SUGERENCIAS
+CREATE TABLE sugerencias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    correo VARCHAR(255),
+    comentario TEXT,
+    created_at DATE DEFAULT(NOW())
+);
+
+INSERT INTO sugerencias (nombre, correo, comentario)
+VALUES
+('Juan Pérez', 'juan@example.com', 'Me gusta mucho la página, sigan así.'),
+('María López', 'maria@example.com', 'Sería genial agregar más categorías.'),
+('Carlos Ruiz', 'carlos@example.com', 'Encontré un error en la sección de contacto.');
+
+
+
