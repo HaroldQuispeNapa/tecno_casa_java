@@ -126,4 +126,53 @@ CREATE TABLE Reclamo (
     estado ENUM('Pendiente', 'Proceso', 'Resuelto') NOT NULL DEFAULT 'Pendiente'
 );
 
+INSERT INTO Reclamo (nombre, apellido, direccion, dni, telefono, email, tipo_bien, monto, descripcion, tipo_reclamo, detalle, pedido, estado) VALUES 
+('Juan', 'Pérez', 'Av. Arequipa 1234, Lince', '45678901', '987654321', 'juan.perez@gmail.com', 
+'Producto', 5499.00, 
+'Falla de pantalla en iPhone 16', 
+'Reclamo', 
+'El dispositivo presenta una línea verde vertical en la pantalla tras 3 días de uso sin haber sufrido caídas.', 
+'Cambio inmediato del equipo por uno nuevo.', 
+'Pendiente'),
+
+('María', 'Gómez', 'Jr. de la Unión 550, Lima', '10293847', '912345678', 'maria.gomez@hotmail.com', 
+'Servicio', 1849.00, 
+'Incumplimiento de fecha de entrega', 
+'Queja', 
+'Compré el TV LG QNED hace una semana. La entrega estaba programada para ayer y no llegaron ni avisaron.', 
+'Entrega inmediata y exoneración del costo de envío.', 
+'Proceso'),
+
+('Carlos', 'Ruiz', 'Calle Los Pinos 120, Miraflores', '72635412', '998877665', 'cruiz.arq@yahoo.com', 
+'Producto', 2199.00, 
+'Producto golpeado estéticamente', 
+'Reclamo', 
+'Al desembalar la Lavadora Samsung AI Wash, noté una abolladura en el panel lateral izquierdo.', 
+'Descuento sobre el precio o cambio de producto.', 
+'Pendiente'),
+
+('Ana', 'Torres', 'Av. Javier Prado Este 4500, Surco', '09182736', '955443322', 'ana.torres90@gmail.com', 
+'Servicio', 0.00, 
+'Mala atención en tienda', 
+'Queja', 
+'El vendedor de la sección de telefonía fue grosero cuando pedí información sobre el Xiaomi Redmi A5.', 
+'Solicito una disculpa formal y capacitación al personal.', 
+'Resuelto'),
+
+('Luis', 'Fernández', 'Urb. San José Mz B Lt 4, Callao', '44556677', '966778899', 'lucho.fernandez@outlook.com', 
+'Producto', 3999.00, 
+'Refrigeradora no congela', 
+'Reclamo', 
+'La Refrigeradora Samsung Side By Side no está haciendo hielo y el congelador no mantiene la temperatura.', 
+'Visita técnica para reparación por garantía.', 
+'Proceso'),
+
+('Sofía', 'Vargas', 'Av. Brasil 300, Jesus Maria', '88223344', '911223344', 'sofia.vargas@gmail.com', 
+'Producto', 2749.00, 
+'Características no coinciden', 
+'Reclamo', 
+'El Televisor TCL decía incluir un control remoto mágico en la web, pero llegó con uno estándar.', 
+'Entrega del accesorio faltante.', 
+'Pendiente');
+
 select * from reclamo;

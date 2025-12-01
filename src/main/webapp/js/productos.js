@@ -3,23 +3,85 @@ import { toast, Confirmar } from "./exports/sweet.js";
 
 const form = document.getElementById("formProducto");
 const modal = new bootstrap.Modal(document.getElementById("modalProducto"));
-const URL = "http://localhost:8080/tecno_casa/ControladorProductos";
+const URL = "http://localhost:8081/tecno_casa/ControladorProductos";
+
+let dataTable;
+
+function initDataTable() {
+    if ($.fn.DataTable.isDataTable('#tabla-productos')) {
+        $('#tabla-productos').DataTable().destroy();
+    }
+
+    dataTable = $('#tabla-productos').DataTable({
+        responsive: true,
+        pageLength: 5,
+        lengthMenu: [5, 10, 25, 50],
+        columnDefs: [
+            { orderable: false, targets: [0, 6] } 
+        ]
+    });
+}
+
+/*
+function initDataTable() {
+    if ($.fn.DataTable.isDataTable('#tabla-productos')) {
+        $('#tabla-productos').DataTable().destroy();
+    }
+
+    dataTable = $('#tabla-productos').DataTable({
+        responsive: true,
+        pageLength: 5,
+        lengthMenu: [5, 10, 25, 50],
+        language: {
+            "decimal": "",
+            "emptyTable": "No hay datos disponibles en la tabla",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ productos",
+            "infoEmpty": "Mostrando 0 a 0 de 0 productos",
+            "infoFiltered": "(filtrado de _MAX_ productos totales)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ productos",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "No se encontraron registros coincidentes",
+            "paginate": {
+                "first": "Primero",
+                "last": "Último",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            },
+            "aria": {
+                "sortAscending": ": activar para ordenar la columna ascendente",
+                "sortDescending": ": activar para ordenar la columna descendente"
+            }
+        },
+        columnDefs: [
+            { orderable: false, targets: [0, 6] } 
+        ]
+    });
+} 
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    initDataTable();
+    registrarEventosTabla(); 
+});
 
 
 function obtenerIdSeleccionado() {
-    const seleccionados = document.querySelectorAll('.seleccion-producto:checked');
-    return seleccionados.length === 1 ? seleccionados[0].value : null;
+    const seleccionados = dataTable.$('.seleccion-producto:checked');
+    return seleccionados.length === 1 ? seleccionados.val() : null;
 }
 
 
 function registrarEventosTabla() {
-    document.querySelectorAll('.seleccion-producto').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            document.querySelectorAll('tr').forEach(tr => tr.classList.remove('selected'));
-            if (checkbox.checked) {
-                checkbox.closest('tr').classList.add('selected');
-            }
-        });
+    $('#tabla-productos tbody').on('change', '.seleccion-producto', function() {
+        $('tr').removeClass('selected');
+        
+        if (this.checked) {
+            $(this).closest('tr').addClass('selected');
+        }
     });
 }
 
@@ -32,9 +94,15 @@ async function cargarProductos() {
         const doc = parser.parseFromString(html, "text/html");
         const nuevaTabla = doc.querySelector("#tabla-productos");
         const tablaActual = document.querySelector("#tabla-productos");
+        
         if (nuevaTabla && tablaActual) {
-            tablaActual.replaceWith(nuevaTabla);
-            registrarEventosTabla();
+            if ($.fn.DataTable.isDataTable('#tabla-productos')) {
+                $('#tabla-productos').DataTable().destroy();
+            }
+
+            tablaActual.innerHTML = nuevaTabla.innerHTML;
+
+            initDataTable();
         }
     } catch (error) {
         console.error("Error al cargar productos:", error);
@@ -62,7 +130,7 @@ form.addEventListener("submit", async (e) => {
         const response = await fetch(URL, {
             method: "POST",
             body: formData
-        });
+        }); 
 
         const text = await response.text();
         console.log("Respuesta cruda:", text);
@@ -98,13 +166,15 @@ document.getElementById("btn-editar-producto").addEventListener("click", () => {
         return;
     }
 
-    const fila = document.querySelector(`.seleccion-producto[value="${id}"]`).closest("tr");
-    const celdas = fila.querySelectorAll("td");
+    const $checkbox = dataTable.$(`.seleccion-producto[value="${id}"]`);
+    
+    const $fila = $checkbox.closest("tr");
+    const celdas = $fila.find("td");
 
-    form.modelo.value = celdas[2].textContent;
-    form.idMarca.value = celdas[3].getAttribute("data-id");
-    form.idCategoria.value = celdas[4].getAttribute("data-id");
-    form.precio.value = celdas[5].textContent.replace("S/. ", "");
+    form.modelo.value = celdas.eq(2).text();
+    form.idMarca.value = celdas.eq(3).data("id") || celdas.eq(3).attr("data-id");
+    form.idCategoria.value = celdas.eq(4).data("id") || celdas.eq(4).attr("data-id");
+    form.precio.value = celdas.eq(5).text().replace("S/. ", "").trim();
     form.idProducto.value = id;
 
     form.setAttribute("data-accion", "editar");
@@ -113,7 +183,8 @@ document.getElementById("btn-editar-producto").addEventListener("click", () => {
 
 
 document.getElementById("btn-eliminar-producto").addEventListener("click", async () => {
-    const seleccionados = document.querySelectorAll('.seleccion-producto:checked');
+    const seleccionados = dataTable.$('.seleccion-producto:checked');
+    
     if (seleccionados.length === 0) {
         toast("warning", "Selecciona al menos un producto para eliminar");
         return;
@@ -123,7 +194,11 @@ document.getElementById("btn-eliminar-producto").addEventListener("click", async
     if (!confirmar) return;
 
     const formEliminar = new FormData();
-    seleccionados.forEach(cb => formEliminar.append("idProducto", cb.value));
+    
+    seleccionados.each(function() {
+        formEliminar.append("idProducto", $(this).val());
+    });
+    
     formEliminar.append("accion", "eliminar");
 
     try {

@@ -21,7 +21,7 @@ public class ControladorPrincipal extends HttpServlet {
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
 
-        if (accion.equals("paginaInicio")) {
+        if ("paginaInicio".equals(accion)) {
             //Categoria
             List<Categoria> listCat = new CategoriaDAO().getListCategoria();
             request.setAttribute("listaCategoria", listCat);
