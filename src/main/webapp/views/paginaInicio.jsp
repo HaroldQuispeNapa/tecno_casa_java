@@ -89,12 +89,12 @@
                             <input type="text" id="nombre" name="nombre" class="form-control bg-light" placeholder="Escribe tu nombre">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label text-muted">Correo</label>
-                            <input type="email" id="email" name="email" class="form-control bg-light" placeholder="ejemplo@email.com">
+                            <label for="email" class="form-label text-muted">Correo*</label>
+                            <input type="email" id="email" name="email" class="form-control bg-light" placeholder="ejemplo@email.com" required>
                         </div>
                         <div class="mb-3">
-                            <label for="comentario" class="form-label text-muted">Comentario</label>
-                            <textarea id="comentario" name="comentario" class="form-control bg-light" rows="4" placeholder="Escribe tu sugerencia..."></textarea>
+                            <label for="comentario" class="form-label text-muted">Comentario*</label>
+                            <textarea id="comentario" name="comentario" class="form-control bg-light" rows="4" placeholder="Escribe tu sugerencia..."required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Enviar</button>
                     </form>

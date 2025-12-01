@@ -54,6 +54,9 @@
                     <a href="${pageContext.request.contextPath}/ControladorReclamo?accionAdmin=reclamo" class="list-group-item list-group-item-action">
                         <i class="bi bi-exclamation-octagon-fill"></i> Reclamos
                     </a>
+                    <a href="${pageContext.request.contextPath}/views/sugerencias.jsp" class="list-group-item list-group-item-action">
+                    <i class="bi bi-exclamation-octagon-fill"></i> Sugerencias
+                    </a>
                 </div>
             </div>
 
