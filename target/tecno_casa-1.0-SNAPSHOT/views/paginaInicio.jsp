@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-6">
                 <div class="card border rounded-3 shadow-sm bg-white p-4">
-                    <form action="TuServletDeSugerencias" method="POST">
+                    <form>
                         <div class="mb-3">
                             <label for="nombre" class="form-label text-muted">Nombre</label>
                             <input type="text" id="nombre" name="nombre" class="form-control bg-light" placeholder="Escribe tu nombre">

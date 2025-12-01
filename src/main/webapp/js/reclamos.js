@@ -4,7 +4,7 @@ import { enviarPeticionPost } from "./exports/post_component.js";
 const form_modal = document.getElementById("form_modal");
 const tbody = document.getElementById("tb_reclamo");
 const modalEditar = new bootstrap.Modal(document.getElementById("modal_editar_reclamo"));
-const URL = "http://localhost:8081/tecno_casa/ControladorReclamo";
+const URL = "http://localhost:8080/tecno_casa/ControladorReclamo";
 const idReclamo = document.getElementById("idReclamo");
 const tituloModal = document.getElementById("titulo_modal");
 const estadoReclamoEditar = document.getElementById("estado_reclamo");
