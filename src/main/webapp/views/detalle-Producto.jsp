@@ -122,6 +122,7 @@
         </section>
 
         <jsp:include page="/components/footer.jsp" flush="true" />
+        
 
         <script>window.APP_CONTEXT = "${pageContext.request.contextPath}";</script>
         
