@@ -1,40 +1,83 @@
 <%-- 
-    Document   : clientes
-    Created on : 12 oct. 2025, 23:30:26
+    Document   : usuarios
+    Created on : 12 oct. 2025
     Author     : efrai
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="/components/dashboard/dashboard.jsp" flush="true" />
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Usuarios</title>
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <!-- DataTables -->
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    </head>
-    <body>
-        <div class="flex-grow-1 p-4" id="main-content">
-            <h1>Usuarios</h1>
 
-            <table id="usuariosTable" class="display">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>DNI</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Rol</th>
-                    </tr>
-                </thead>
-            </table>    
+<jsp:include page="/components/dashboard/dashboard.jsp" flush="true" />
+
+<style>
+    /* Estilos Generales de la Página */
+    .page-title {
+        color: #5a5c69;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+    }
+
+    /* Tarjeta Contenedora (Fondo Blanco) */
+    .card-datatable {
+        background-color: #fff;
+        border: 1px solid #e3e6f0;
+        border-radius: 0.35rem;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    }
+
+    /* === ENCABEZADO DE TABLA (NEGRO/OSCURO) === */
+    #usuariosTable thead th {
+        background-color: #f8f9fc; /* Fondo gris muy suave */
+        color: #212529;            /* NEGRO (Igual que en productos) */
+        border-bottom: 2px solid #333;
+        font-weight: 800;          /* Negrita */
+        text-transform: uppercase; 
+        font-size: 0.85rem;
+        vertical-align: middle;
+    }
+    
+    /* Cuerpo de la tabla */
+    #usuariosTable tbody td {
+        color: #5a5c69;
+        vertical-align: middle;
+        border-color: #e3e6f0;
+    }
+    
+    /* Paginación DataTables (Gris oscuro para combinar) */
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        background: #333 !important;
+        color: white !important;
+        border: 1px solid #333 !important;
+    }
+</style>
+
+<div class="flex-grow-1 p-4" id="main-content">
+    
+    <h1 class="page-title">Gestión de Usuarios</h1>
+
+    <div class="card card-datatable mb-4">
+        <div class="card-body">
+            
+            <div class="table-responsive">
+                <table id="usuariosTable" class="table table-striped table-bordered w-100" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>DNI</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>    
+            </div>
+            
         </div>
-        <script type="module" src="${pageContext.request.contextPath}/js/usuarios.js"></script>
-    </body>
-</body>
-</html>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="${pageContext.request.contextPath}/js/usuarios.js"></script>

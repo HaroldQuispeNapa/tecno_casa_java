@@ -39,7 +39,7 @@
                             return;
                         }
                     %>
-                    <jsp:include page="<%= component %>" />                   
+                    <jsp:include page="<%= component%>" />                   
                 </div>
                 <div class="col-md-4"></div>
             </div>

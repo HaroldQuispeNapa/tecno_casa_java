@@ -1,0 +1,100 @@
+:root {
+    --sidebar-width: 260px;
+    --primary-color: #e30613; /* Tu rojo de marca */
+    --dark-sidebar: #1a1a1a;
+    --hover-item: #333;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fc; /* Fondo gris muy suave para todo el panel */
+    overflow-x: hidden;
+}
+
+/* --- SIDEBAR --- */
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: var(--sidebar-width);
+    background-color: var(--dark-sidebar);
+    color: #fff;
+    transition: margin 0.25s ease-out;
+    position: fixed;
+    z-index: 1000;
+}
+
+.sidebar-heading {
+    padding: 1.5rem 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: -0.5px;
+}
+
+.sidebar-brand-red {
+    color: var(--primary-color);
+}
+
+.list-group-item {
+    background-color: transparent;
+    color: rgba(255,255,255,0.8);
+    border: none;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.list-group-item:hover {
+    background-color: var(--hover-item);
+    color: #fff;
+    border-left-color: var(--primary-color); /* Borde rojo al pasar mouse */
+}
+
+.list-group-item i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+#page-content-wrapper {
+    margin-left: var(--sidebar-width); /* Empujamos el contenido */
+    width: calc(100% - var(--sidebar-width));
+    transition: margin 0.25s ease-out, width 0.25s ease-out;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top-navbar {
+    background-color: #ffffff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    padding: 10px 20px;
+    height: 70px;
+}
+
+.nav-user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: calc(-1 * var(--sidebar-width));
+    }
+    #page-content-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    body.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+}

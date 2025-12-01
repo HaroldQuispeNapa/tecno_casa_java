@@ -1,0 +1,64 @@
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    border: none;
+}
+
+.table-header-custom {
+    background-color: #f8f9fc;
+    color: #5a5c69;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #e3e6f0;
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+    color: #5a5c69;
+}
+
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 200px;
+    font-size: 0.85rem;
+}
+
+.badge-estado {
+    padding: 0.5em 0.75em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50px;
+}
+.estado-pendiente {
+    background-color: #f6c23e;
+    color: #fff;
+}
+.estado-proceso {
+    background-color: #36b9cc;
+    color: #fff;
+}
+.estado-resuelto {
+    background-color: #1cc88a;
+    color: #fff;
+}
+.estado-rechazado {
+    background-color: #e74a3b;
+    color: #fff;
+}
+
+.btn-icon {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
